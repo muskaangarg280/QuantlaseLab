@@ -1,3 +1,7 @@
+# Adapted from: https://github.com/michaelnny/ReservoirComputing/blob/main/RC_StockPriceSPY.py
+# Original author: michaelnny
+# Modified for modularity and readability as part of internship project.
+
 from typing import Tuple
 import numpy as np
 import pandas as pd

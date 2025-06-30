@@ -37,3 +37,8 @@ This project is part of internship work and is released for educational and demo
 
 This project was adapted from the original implementation by [michaelnny](https://github.com/michaelnny/ReservoirComputing/blob/main/RC_StockPriceSPY.py).  
 All modifications and restructuring were done as part of an internship to explore and enhance modular machine learning pipelines.
+
+## Dataset
+
+- **Source**: [Yahoo Finance - S&P 500 Data](https://finance.yahoo.com/quote/SPY/history/)
+- File: `SPY.csv` (closing prices of SPY ETF)
