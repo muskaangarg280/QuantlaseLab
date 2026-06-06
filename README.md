@@ -1,4 +1,4 @@
-# Physical Reservoir Computing — SLM/CCD Pipeline
+# Physical Reservoir Computing - SLM/CCD Pipeline
 ## Quantlase Lab ML Internship, Abu Dhabi
 
 Implementation of physical reservoir computing using a 
@@ -17,21 +17,21 @@ CCD camera output is captured and block-averaged across
 the macropixel grid to extract reservoir states from 
 real light interference patterns.
 
-- `codeclass.py` — CCDProcessor class: maps SLM 
+- `codeclass.py` - CCDProcessor class: maps SLM 
   macropixels to CCD coordinates, performs block 
   averaging to extract optical reservoir states
-- `parameter_settings.ini` — hardware configuration 
+- `parameter_settings.ini` - hardware configuration 
   (CCD image map boundaries, macropixel geometry)
 
 **Software ESN Reference (esn/)**
 Computational ESN implementation for S&P 500 time 
-series forecasting — used as a software baseline 
+series forecasting - used as a software baseline 
 for the physical reservoir approach.
 
-- `esn.py` — ESN class: InputLayer, ReservoirLayer 
+- `esn.py` - ESN class: InputLayer, ReservoirLayer 
   (leaky integrator, spectral radius normalisation), 
   OutputLayer (Ridge Regression readout)
-- `RC_StockPriceSPY.py` — forecasting pipeline: 
+- `RC_StockPriceSPY.py` - forecasting pipeline: 
   data ingestion, training, evaluation (MSE per 
   dimension), autonomous prediction mode
 
