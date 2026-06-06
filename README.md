@@ -1,44 +1,53 @@
-# Time Series Forecasting with Echo State Networks
-## ML Pipeline Engineering — Quantlase Lab Internship
+# Physical Reservoir Computing — SLM/CCD Pipeline
+## Quantlase Lab ML Internship, Abu Dhabi
 
-End-to-end time series forecasting pipeline using Reservoir Computing 
-(Echo State Networks), applied to S&P 500 closing price prediction.
-
-Built as part of an ML engineering internship at Quantlase Lab,
-Abu Dhabi — focused on refactoring and productionising ML code.
+Implementation of physical reservoir computing using a 
+Spatial Light Modulator (SLM) and CCD camera as the 
+optical reservoir, alongside a software Echo State 
+Network (ESN) reference implementation for comparison.
 
 ---
 
-## What was built
+## What this project covers
 
-- Refactored an unstructured ML script into a clean, modular, 
-  class-based Python package (`esn.py`) with separated 
-  preprocessing, training, and evaluation components
-- Built a complete forecasting pipeline: data ingestion from 
-  CSV → normalisation → reservoir state computation → 
-  readout training → RMSE evaluation → visualisation
-- Applied the pipeline to SPY (S&P 500 ETF) historical close 
-  price data
+**Physical RC Pipeline (imaging/)**
+Uses a 1600×1152 SLM divided into 32-pixel macropixels 
+(1,800 reservoir nodes) as a physical optical reservoir. 
+CCD camera output is captured and block-averaged across 
+the macropixel grid to extract reservoir states from 
+real light interference patterns.
+
+- `codeclass.py` — CCDProcessor class: maps SLM 
+  macropixels to CCD coordinates, performs block 
+  averaging to extract optical reservoir states
+- `parameter_settings.ini` — hardware configuration 
+  (CCD image map boundaries, macropixel geometry)
+
+**Software ESN Reference (esn/)**
+Computational ESN implementation for S&P 500 time 
+series forecasting — used as a software baseline 
+for the physical reservoir approach.
+
+- `esn.py` — ESN class: InputLayer, ReservoirLayer 
+  (leaky integrator, spectral radius normalisation), 
+  OutputLayer (Ridge Regression readout)
+- `RC_StockPriceSPY.py` — forecasting pipeline: 
+  data ingestion, training, evaluation (MSE per 
+  dimension), autonomous prediction mode
 
 ---
 
 ## Tech Stack
 
-Python · NumPy · Pandas · Matplotlib · Scikit-learn
+Python · NumPy · SciPy · OpenCV · Pandas · 
+Matplotlib · configparser
 
 ---
 
-## Structure
+## Note on ESN implementation
 
-esn/
-├── esn.py                  # ESN class — reservoir + readout
-├── RC_StockPriceSPY.py     # forecasting pipeline
-└── SPY.csv                 # S&P 500 historical data
-
----
-
-## Note
-
-This project was completed under internship supervision at 
-Quantlase Lab and is for educational and demonstrative purposes 
-only. Not intended for financial use.
+The software ESN builds on reservoir computing 
+principles from published literature and an open-source 
+reference implementation. The physical RC pipeline 
+(CCD/SLM integration) was developed independently 
+as part of the internship.
