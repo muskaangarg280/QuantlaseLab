@@ -1,4 +1,4 @@
-# QuantLase Lab – Time Series Forecasting with Echo State Networks
+# QuantLase Lab - Time Series Forecasting with Echo State Networks
 
 This project was developed as part of my **internship at QuantLase Lab**, where I explored the practical application of **Echo State Networks (ESNs)** for **time series forecasting**, focusing on **stock price prediction** using historical S&P 500 data.
 
@@ -21,7 +21,7 @@ During my time at **QuantLase Lab**, I worked on real-world machine learning dep
 - **Language**: Python 3  
 - **Libraries**: NumPy, Pandas, Matplotlib, scikit-learn  
 - **Model**: Custom implementation of Echo State Network (`esn.py`)  
-- **Data Source**: [Yahoo Finance – SPY ETF](https://finance.yahoo.com/quote/SPY/history/)
+- **Data Source**: [Yahoo Finance - SPY ETF](https://finance.yahoo.com/quote/SPY/history/)
 
 ## Project Outcomes
 
