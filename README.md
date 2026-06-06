@@ -1,39 +1,44 @@
-# QuantLase Lab - Time Series Forecasting with Echo State Networks
+# Time Series Forecasting with Echo State Networks
+## ML Pipeline Engineering — Quantlase Lab Internship
 
-This project was developed as part of my **internship at QuantLase Lab**, where I explored the practical application of **Echo State Networks (ESNs)** for **time series forecasting**, focusing on **stock price prediction** using historical S&P 500 data.
+End-to-end time series forecasting pipeline using Reservoir Computing 
+(Echo State Networks), applied to S&P 500 closing price prediction.
 
-## Internship Overview
+Built as part of an ML engineering internship at Quantlase Lab,
+Abu Dhabi — focused on refactoring and productionising ML code.
 
-During my time at **QuantLase Lab**, I worked on real-world machine learning deployment, gaining hands-on experience with:
+---
 
-- Refactoring unstructured ML scripts into **clean, modular, class-based architectures**  
-- Understanding the full ML lifecycle: **data preprocessing**, **model training**, **evaluation**, and **real-time forecasting**  
-- Implementing and tuning a **Reservoir Computing model (ESN)** for sequential data prediction
+## What was built
 
-## Project Goals
+- Refactored an unstructured ML script into a clean, modular, 
+  class-based Python package (`esn.py`) with separated 
+  preprocessing, training, and evaluation components
+- Built a complete forecasting pipeline: data ingestion from 
+  CSV → normalisation → reservoir state computation → 
+  readout training → RMSE evaluation → visualisation
+- Applied the pipeline to SPY (S&P 500 ETF) historical close 
+  price data
 
-- Predict S&P 500 closing prices using ESNs  
-- Evaluate model performance using RMSE and visualizations  
-- Refactor legacy code for maintainability and scalability  
+---
 
-## Technologies Used
+## Tech Stack
 
-- **Language**: Python 3  
-- **Libraries**: NumPy, Pandas, Matplotlib, scikit-learn  
-- **Model**: Custom implementation of Echo State Network (`esn.py`)  
-- **Data Source**: [Yahoo Finance - SPY ETF](https://finance.yahoo.com/quote/SPY/history/)
+Python · NumPy · Pandas · Matplotlib · Scikit-learn
 
-## Project Outcomes
+---
 
-- Successfully applied a lightweight ESN for financial time series prediction  
-- Improved code readability and modularity for reuse in future experiments  
-- Developed a deeper understanding of how ML pipelines operate in applied settings
+## Structure
 
-## License
+esn/
+├── esn.py                  # ESN class — reservoir + readout
+├── RC_StockPriceSPY.py     # forecasting pipeline
+└── SPY.csv                 # S&P 500 historical data
 
-This project was completed as part of a supervised internship and is intended **for educational and demonstrative purposes only**. It is **not** intended for financial use or production deployment.
+---
 
-## Credits
+## Note
 
-- Original ESN code adapted from [michaelnny](https://github.com/michaelnny/ReservoirComputing/blob/main/RC_StockPriceSPY.py)  
-- All refactoring and enhancements done under internship supervision at QuantLase Lab
+This project was completed under internship supervision at 
+Quantlase Lab and is for educational and demonstrative purposes 
+only. Not intended for financial use.
