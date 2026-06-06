@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 import configparser  # needed for IniFileManager
+from pathlib import Path
 
 class IniFileManager:
     def __init__(self, filepath):
@@ -30,9 +31,9 @@ class CCDProcessor:
         self.slm_cord_x_range = np.arange(0, (self.slm_size_x + 1), self.macro_pixel_size)
         self.slm_cord_y_range = np.arange(0, (self.slm_size_y + 1), self.macro_pixel_size)
 
-        self.ini_manager = IniFileManager(
-            r"/Users/muskaan_garg_/BioTrackAI/parameter_settings.ini"  
-        )
+        config_path = Path(__file__).parent / "parameter_settings.ini"
+        self.ini_manager = IniFileManager(str(config_path))
+
         self.ini_manager.read_ini_file()
 
         self.x1 = int(self.ini_manager.get_value("CCD_Image_Map", "start_x"))
